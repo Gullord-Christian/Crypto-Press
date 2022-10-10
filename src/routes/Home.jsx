@@ -6,7 +6,7 @@ const Home = ({ coins }) => {
 	return (
 		<div>
 			<CoinSearch coins={coins} />
-			<Trending />
+			<Trending coins={coins} />
 		</div>
 	);
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 const Trending = () => {
 	const [trending, setTrending] = useState([]);
 
@@ -22,6 +22,7 @@ const Trending = () => {
 						key={i}
 						className="rounded-div flex justify-between p-4 hover:scale-105 ease-in-out duration-300">
 						<div className="flex w-full items-center justify-between">
+							{/* <Link to={`/coin/${coin.id}`}> */}
 							<div className="flex">
 								<img
 									src={coin.item.small}
@@ -33,6 +34,7 @@ const Trending = () => {
 									<p className="font-bold">{coin.item.symbol}</p>
 								</div>
 							</div>
+							{/* </Link> */}
 							<div className="flex items-center">
 								<img
 									className="w-4 m-2"

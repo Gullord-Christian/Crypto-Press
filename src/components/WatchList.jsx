@@ -47,7 +47,6 @@ const WatchList = () => {
 							<th className="px-4">Rank #</th>
 							<th className="text-left">Coin</th>
 							<th>24h</th>
-							{/* <th>7d</th> */}
 							<th>Price</th>
 							<th>ATH</th>
 							<th className="text-left">Remove</th>
@@ -66,11 +65,11 @@ const WatchList = () => {
 												alt="/"
 											/>
 											<div>
-												<p className="hidden sm:table-cell">
+												<p className="hidden sm:table-cell sm:mr-2">
 													{coin?.name}
 												</p>
-												<p className="text-gray-500 text-left text-sm">
-													{coin?.symbol.toUpperCase()}
+												<p className="text-gray-500 text-left text-sm hidden md:table-cell">
+													({coin?.symbol.toUpperCase()})
 												</p>
 											</div>
 										</div>
@@ -78,26 +77,16 @@ const WatchList = () => {
 								</td>
 								<td>
 									{coin.change > 0 ? (
-										<p className="text-green-600">
+										<p className="text-green-600 mr-2">
 											{coin.change.toFixed(2)}%
 										</p>
 									) : (
-										<p className="text-red-600">
+										<p className="text-red-600 mr-2">
 											{coin.change.toFixed(2)}%
 										</p>
 									)}
 								</td>
-								{/* <td>
-									{coin.month > 0 ? (
-										<p className="text-green-600">
-											{coin?.month.toFixed(2)}%
-										</p>
-									) : (
-										<p className="text-red-600">
-											{coin?.month.toFixed(2)}%
-										</p>
-									)}
-								</td> */}
+
 								<td>${coin?.current_price.toLocaleString()}</td>
 								<td>${coin?.ath.toLocaleString()}</td>
 								<td className="pl-8">

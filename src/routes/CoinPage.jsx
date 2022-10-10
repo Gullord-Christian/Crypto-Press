@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 const CoinPage = () => {
 	const [coin, setCoin] = useState({});
+	const [setLoading] = useState(false);
 
 	const params = useParams();
 
@@ -15,16 +16,12 @@ const CoinPage = () => {
 	useEffect(() => {
 		axios.get(url).then((res) => {
 			setCoin(res.data);
+			setLoading(true);
 		});
 	}, [url]);
 
 	return (
 		<div className="rounded-div my-12 py-8">
-			{/* <p>
-				<a href="/" className="hover:cursor-pointer focus:border-b">
-					Back
-				</a>
-			</p> */}
 			<div className="flex py-8">
 				<img src={coin.image?.large} alt="/" className="w-20 mr-8" />
 
