@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+
 const Register = () => {
 	const { register } = UserAuth();
 	const [email, setEmail] = useState("");

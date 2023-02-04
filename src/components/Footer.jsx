@@ -2,6 +2,7 @@ import React from "react";
 import ToggleMode from "./ToggleMode";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaFacebookF, FaGithub, FaTiktok, FaTwitter } from "react-icons/fa";
+
 const Footer = () => {
 	return (
 		<div className="rounded-div mt-8 pt-8 text-primary">

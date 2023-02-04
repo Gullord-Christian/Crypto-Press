@@ -10,6 +10,7 @@ import CoinPage from "./routes/CoinPage";
 import Footer from "./components/Footer";
 import axios from "axios";
 import { AuthContextProvider } from "./context/AuthContext";
+
 function App() {
 	const [coins, setCoins] = useState([]);
 	const url =

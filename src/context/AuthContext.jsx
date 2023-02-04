@@ -14,6 +14,7 @@ const UserContext = createContext();
 export const AuthContextProvider = ({ children }) => {
 	const [user, setUser] = useState({});
 
+	// creating a new user from firebase. Automatically creates a new entry in the database in firestore and creates an empty array for user to store fav coins
 	const register = (email, password) => {
 		createUserWithEmailAndPassword(auth, email, password);
 		return setDoc(doc(db, "users", email), {
@@ -28,6 +29,7 @@ export const AuthContextProvider = ({ children }) => {
 		return signOut(auth);
 	};
 
+	// authenticating user
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			setUser(currentUser);

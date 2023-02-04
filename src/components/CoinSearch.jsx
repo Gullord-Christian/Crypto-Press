@@ -8,6 +8,7 @@ const CoinSearch = ({ coins }) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [coinsPerPage] = useState(20);
 
+	// pagination, using some logic to get coins per page to pass to Pagination component
 	const indexOfLastCoin = currentPage * coinsPerPage;
 	const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
 	const currentCoins = coins.slice(indexOfFirstCoin, indexOfLastCoin);

@@ -10,8 +10,10 @@ const CoinItem = ({ coin }) => {
 	const [savedCoin, setSavedCoin] = useState(false);
 	const { user } = UserAuth();
 
+	// creating the document in firebase
 	const coinPath = doc(db, "users", `${user?.email}`);
 
+	// saving coin to the user document
 	const saveCoin = async () => {
 		if (user?.email) {
 			setSavedCoin(true);
@@ -25,7 +27,6 @@ const CoinItem = ({ coin }) => {
 					ath: coin.ath,
 					change: coin.price_change_percentage_24h,
 					current_price: coin.current_price,
-					// month: coin.price_change_percentage_30d,
 				}),
 			});
 		} else {

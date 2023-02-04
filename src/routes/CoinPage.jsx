@@ -7,7 +7,6 @@ import { useParams } from "react-router-dom";
 
 const CoinPage = () => {
 	const [coin, setCoin] = useState({});
-	const [setLoading] = useState(false);
 
 	const params = useParams();
 
@@ -16,7 +15,6 @@ const CoinPage = () => {
 	useEffect(() => {
 		axios.get(url).then((res) => {
 			setCoin(res.data);
-			setLoading(true);
 		});
 	}, [url]);
 
